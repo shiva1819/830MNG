@@ -1,0 +1,21 @@
+	#header{
+background-color: lime;
+width: 1024px;
+/*height:50px;*/
+margin-top: 5px;
+
+		}
+		#one{
+			width:500px;
+			/*height: 50px;*/
+			background:crimson;
+		}
+		#two{
+			width:250px;
+			/*height: 50px;*/
+			background: lightblue;
+		}
+
+		.h50{
+			height: 50px;
+		}
