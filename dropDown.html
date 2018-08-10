@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#menu{
+			width: 100px;
+			margin:auto;
+		}
+		#btn{
+			width:100%;
+			line-height: 30px;
+			text-align: center;
+			background-color: none;
+			border:0px;
+			position: relative;
+		}
+		#menuItems{
+			padding: 0px;
+			margin: 0px;
+			width: 200px;
+			display: none;
+			position: absolute;
+			left: 0px;
+		}
+		#menuItems li{
+			list-style-type: none;
+			line-height: 30px;
+			text-align: center;
+			width: 100%;
+			background-color: #ff4e09;
+		}
+		#menuItems li:hover{
+			background-color: #ff4e7f;
+		}
+		#btn:hover #menuItems{
+			display: block;
+		}
+
+	</style>
+</head>
+<body>	
+	<div id="menu">
+		<button type="button" id="btn">
+			 MENU &#9660;
+		<ul id="menuItems">
+			<li>
+				MENU 1
+			</li>
+			<li>
+				MENU 2
+			</li>
+			<li>
+				MENU 3
+			</li>
+			<li>
+				MENU 4
+			</li>
+		</ul>
+
+		</button>
+	</div>
+</body>
+</html>
