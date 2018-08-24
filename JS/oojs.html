@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {
+			name:"shiva",
+			get:function(){
+				console.log('Getter');
+				console.log(this.name);
+			},
+			put:function(){
+				console.log("putter...");
+			}
+		}
+
+		// constructor Function
+
+		function demo(name, phone){
+			this.name = name;
+			this.phone = phone;
+			this.fn = function(){
+				console.log(this.name+ "------" + this.phone);
+			}
+		}
+
+		demo.prototype.email = "as.prasad@gmail.com";
+		console.log(demo.isPrototypeOf(demo.email));
+
+		var x = new demo('ShivaPrasad');
+
+
+		
+		var y = new demo('ShivaPrasad1 ');
+		var z = new demo('ShivaPrasad2');
+		var a = new demo('ShivaPrasad3');
+		var b = new demo('ShivaPrasad4');
+
+		demo.prototype.email = "as.shiva@gmail.com";
+		var c = new demo('ShivaPrasad5', 111111111);
+
+		console.log(x);
+		// console.log(c.hasOwnPropert('name')); // true
+
+
+
+
+		// closure
+
+		function demo123(abc){
+			var a = 10;
+
+			function demo1111(){
+				console.log(a + abc);
+			}
+			demo1111();
+		}
+
+		demo123(10);
+
+
+		// Encapsulation..
+		var abc = 40;
+		(function(a){
+			console.log(abc + a);
+
+			var obj = {
+				demo:function(){
+					alert(1);
+				},
+				demo1:function(){
+					alert(2)
+				}
+			}
+		})(10);
+
+
+
+
+
+
+	</script>
+</body>
+</html>
