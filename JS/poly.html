@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		function stu(name, age){
+			this.name = name;
+			this.age = age;
+		}
+
+		stu.prototype.getInfo = function(){
+			return this.name + " - " + this.age;
+		}
+
+
+		function emp(name, age, salary){
+			this.name = name;
+			this.age = age;
+			this.salary = salary;
+		}
+
+		
+
+
+		var a = new stu('x', 10);
+		console.log(a.getInfo());
+		// inheritance
+		emp.prototype = new stu();
+		stu.prototype.getInfo = function(){
+			return this.name + " - " + this.age + " - " + this.salary;
+		}
+
+
+		var b = new emp('y', 20, 1000);
+
+		console.log(b.getInfo());
+		
+
+
+
+	</script>
+</body>	
+</html>

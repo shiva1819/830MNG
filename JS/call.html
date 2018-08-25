@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {
+			name:"Shiva",
+			email:'as.prasad@gmail.com'
+		}		
+
+
+
+		function demo(lname, age){
+			return "Hai I am " +  this.name + lname + " and my Email " + this.email + " - " +age;
+		}
+
+
+		console.log(demo.call(obj, 'Prasad', 30));
+
+		var arr = ['Aluri', 30];
+
+		console.log(demo.apply(obj, arr));
+
+		var test = demo.bind(obj);
+
+		console.log(test('Shankar', 50));
+
+
+	</script>
+</body>
+</html>

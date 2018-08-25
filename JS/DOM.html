@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#one{
+			position: absolute;
+			right: 0px;
+			top: 0px;
+			background: yellow;
+			color: red;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+		
+	<button type="button" id="btn" onclick="show()"> Show </button>
+
+	<div id="one" class="one"> <span>One</span> </div>
+	<p> aksdakjsd </p>
+	<div id="two"> One </div>
+		<h1> aksdhajksd </h1>
+	<div id="three" class="one"> One </div>
+
+	<script type="text/javascript">
+		
+		// id, class, tagName.
+		var One = document.getElementById('one');
+		// var Btn = document.getElementById('btn');
+		var OneClass = document.getElementsByClassName('one')[1];
+		var OneElement = document.getElementsByTagName('div')[1];
+		console.log(OneElement.innerText = "Two");
+
+		console.log(One.innerHTML = "<h5> This is h5 </h5>");
+		console.log(One.innerText);
+
+		One.style.display = "none";
+
+		function show(){
+			
+
+
+			if(One.style.display == "none"){
+				One.style.display = "block";
+			}else{
+				One.style.display = "none";
+			}
+		}
+		/*One.style.background = "yellow";
+		One.style.color = "red";
+		One.style.position = "absolute";
+		One.style.right = "0px";
+		One.style.top = "0px";*/
+
+	</script>
+</body>
+</html>
