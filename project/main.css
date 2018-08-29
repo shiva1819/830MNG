@@ -237,6 +237,13 @@ table,tr,td,th{
 	border-bottom: 2px solid #ccc;
 	border-collapse: collapse;
 }
+
+.editBtn, .delBtn{
+	background:none !important;
+	border:none;
+	outline: none;
+	margin-left: 10px;
+}
 .clr-green{
 	color: #FFEB3B;
 	cursor: pointer;

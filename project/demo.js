@@ -4,6 +4,7 @@ var hmeBtn = document.getElementById('hmeBtn');
 var menu = document.getElementById('menu');
 var mainLogo = document.getElementById('mainLogo');
 var menuText = document.getElementsByClassName('menuText');
+var mainBind =  document.getElementById('mainBind');
 
 // element.addEventListener('click', function demo(){}, true/false);
 
@@ -63,12 +64,124 @@ sign.addEventListener('click', function(){
 
 var subBtn = document.getElementById('subBtn');
 var canBtn = document.getElementById('canBtn');
+
+// form Data
 var uname = document.getElementById('uname');
+var Email = document.getElementById('email');
+var contact = document.getElementById('contact');
+var country = document.getElementById('country');
+var gender = document.getElementsByClassName('gender');
+var count = 0;
+
 
 subBtn.addEventListener('click', function(){
-	console.log(uname.value);
+	count++;
+	// Form Values
+		// console.log(uname.value);
+		// console.log(Email.value);
+		// console.log(contact.value);
+		// console.log(country.value);
+
+
+
+	// create Elements
+
+	var Tr = document.createElement('tr');
+		var slNo = document.createElement('td');
+		var TdName = document.createElement('td');
+		var TdEmail = document.createElement('td');
+		var TdContact = document.createElement('td');
+		var TdCountry = document.createElement('td');
+		var TdGender = document.createElement('td');
+			var TdEdit = document.createElement('td');
+			var EditBtn = document.createElement('button');
+			var DelBtn = document.createElement('button');
+			EditBtn.innerHTML = '<i class="fas fa-edit clr-green"></i>';
+			DelBtn.innerHTML = '<i class="fas fa-trash clr-red"></i>';
+
+			// Adding Attributes;
+
+			/*EditBtn.className = "editBtn";
+			DelBtn.className = "delBtn";*/
+
+			EditBtn.setAttribute('class', 'editBtn');
+			DelBtn.setAttribute('class', 'delBtn');
+
+			EditBtn.setAttribute('id', 'DemoId');
+			DelBtn.id = 'DelDemoId';
+
+
+			console.log(EditBtn +"\n"+ DelBtn);
+			/*
+				ele.id = 'idName';
+				ele.href = "link";
+				ele.src = "src";
+
+				
+				
+
+			*/
+
+
+
+	// adding Content..
+
+		slNo.innerText = count;
+		TdName.innerText = uname.value;
+		TdEmail.innerText = Email.value;
+		TdContact.innerText = contact.value;
+		TdCountry.innerText = country.value;
+		TdEdit.appendChild(EditBtn);
+		TdEdit.appendChild(DelBtn);
+
+		// TdEdit.innerHTML = '<i class="fas fa-edit clr-green"></i><i class="fas fa-trash clr-red"></i>';
+
+
+
+		for(var i = 0; i  < gender.length; i++){
+			if(gender[i].checked == true){
+				TdGender.innerText = gender[i].value;
+			}
+		}
+
+		// console.log(slNo.innerText +"\n"+ TdGender.innerText)
+
+
+
+		// Append Content to Parent.
+			// parent.appendChild(child);
+
+		Tr.appendChild(slNo);
+		Tr.appendChild(TdName);
+		Tr.appendChild(TdEmail);
+		Tr.appendChild(TdContact);
+		Tr.appendChild(TdCountry);
+		Tr.appendChild(TdGender);
+		Tr.appendChild(TdEdit);
+		console.log(Tr);
+		mainBind.appendChild(Tr);
+
+
+		EditBtn.onclick = function(){
+			alert(TdName.innerText);
+		}
+
 
 });
+
+
+canBtn.onclick = function(){
+	uname.value = "";
+	Email.value = "";	
+	contact.value = "";
+	country.value = "none";
+	for(var i = 0; i  < gender.length; i++){
+			if(gender[i].checked == true){
+				gender[i].checked = false;
+			}
+		}
+}
+
 
 
 
