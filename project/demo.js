@@ -6,6 +6,9 @@ var mainLogo = document.getElementById('mainLogo');
 var menuText = document.getElementsByClassName('menuText');
 var mainBind =  document.getElementById('mainBind');
 
+var updateBtn = document.getElementById('updateBtn');
+var restBtn = document.getElementById('restBtn');
+
 // element.addEventListener('click', function demo(){}, true/false);
 
 for(var j =0; j < menuText.length; j++){
@@ -52,12 +55,7 @@ dash.addEventListener('click', function(){
 });
 
 
-sign.addEventListener('click', function(){
-	// if(Signup.style.display == "none")
-		dashboard.style.display = "none";
-		Signup.style.display = "block";
 
-});
 
 
 // submit
@@ -72,6 +70,34 @@ var contact = document.getElementById('contact');
 var country = document.getElementById('country');
 var gender = document.getElementsByClassName('gender');
 var count = 0;
+
+sign.addEventListener('click', function(){
+	// if(Signup.style.display == "none")
+		dashboard.style.display = "none";
+		Signup.style.display = "block";
+		
+
+		updateBtn.style.display = "none";
+		restBtn.style.display = "none";
+		subBtn.style.display = "inline";
+		canBtn.style.display = "inline";
+
+
+		uname.value = "";
+		Email.value = "";	
+		contact.value = "";
+		country.value = "none";
+		for(var i = 0; i  < gender.length; i++){
+				if(gender[i].checked == true){
+					gender[i].checked = false;
+				}
+			}
+
+
+
+});
+
+
 
 
 subBtn.addEventListener('click', function(){
@@ -162,9 +188,97 @@ subBtn.addEventListener('click', function(){
 		mainBind.appendChild(Tr);
 
 
-		EditBtn.onclick = function(){
-			alert(TdName.innerText);
+
+	uname.value = "";
+	Email.value = "";	
+	contact.value = "";
+	country.value = "none";
+	for(var i = 0; i  < gender.length; i++){
+			if(gender[i].checked == true){
+				gender[i].checked = false;
+			}
 		}
+
+
+		EditBtn.onclick = function(){
+			// alert(TdName.innerText);
+			updateBtn.style.display = "inline";
+			restBtn.style.display = "inline";
+			subBtn.style.display = "none";
+			canBtn.style.display = "none";
+			dashboard.style.display = "none";
+			Signup.style.display = "block";
+			console.log(this.parentNode.parentNode);
+			
+
+
+			var EditName = this.parentNode.parentNode.children[1];
+			var EditEmail = this.parentNode.parentNode.children[2];
+			var EditContact = this.parentNode.parentNode.children[3];
+			var EditCountry = this.parentNode.parentNode.children[4];
+			var EditGender = this.parentNode.parentNode.children[5];
+
+
+			uname.value = EditName.innerText;
+			Email.value = EditEmail.innerText;	
+			contact.value = EditContact.innerText;
+			country.value = EditCountry.innerText;
+			for(var i = 0; i  < gender.length; i++){
+					if(EditGender.innerText == gender[i].value){
+						gender[i].checked = true;
+					}
+					// gender[i].value = EditGender;
+				}
+
+
+
+
+		updateBtn.onclick = function(){
+			EditName.innerText = uname.value;
+			EditEmail.innerText = Email.value;
+			EditContact.innerText = contact.value;
+			EditCountry.innerText = country.value;
+			for(var i = 0; i  < gender.length; i++){
+					if(gender[i].checked = true){
+						EditGender.innerText = gender[i].value
+					}
+					// gender[i].value = EditGender;
+				}
+
+			}
+
+
+		}
+
+		DelBtn.onclick = function(){
+			var Trdelete = this.parentNode.parentNode;
+			mainBind.removeChild(Trdelete);
+
+		}
+
+
+
+		restBtn.onclick = function(){
+			dashboard.style.display = "block";
+			Signup.style.display = "none";
+			updateBtn.style.display = "none";
+			restBtn.style.display = "none";
+			subBtn.style.display = "inline";
+			canBtn.style.display = "inline";
+
+
+
+			uname.value = "";
+			Email.value = "";	
+			contact.value = "";
+			country.value = "none";
+			for(var i = 0; i  < gender.length; i++){
+					if(gender[i].checked == true){
+						gender[i].checked = false;
+					}
+				}
+
+		};
 
 
 });

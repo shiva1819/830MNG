@@ -3,6 +3,7 @@
 	padding: 0px;
 	font-family: 'Ubuntu', sans-serif;
 	transition: 0.1s;
+	color: #fff;
 	/*
 		font-family: 'Ubuntu', sans-serif;
 		font-family: 'Acme', sans-serif;
@@ -252,6 +253,9 @@ table,tr,td,th{
 
 	color: #ff5722;
 	cursor: pointer;
+}
+#updateBtn,#restBtn{
+	display: none;
 }
 
 .lh5{
