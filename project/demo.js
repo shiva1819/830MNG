@@ -39,7 +39,7 @@ var sign = document.getElementById('sign');
 
 var dashboard = document.getElementById('dashboard');
 var Signup = document.getElementById('Signup');
-
+var genError = document.getElementById('genError');
 
 /*dash.onclick = function(){
 
@@ -71,6 +71,10 @@ var country = document.getElementById('country');
 var gender = document.getElementsByClassName('gender');
 var count = 0;
 
+
+
+
+
 sign.addEventListener('click', function(){
 	// if(Signup.style.display == "none")
 		dashboard.style.display = "none";
@@ -100,8 +104,49 @@ sign.addEventListener('click', function(){
 
 
 
+
+genFlag1 = "";
 subBtn.addEventListener('click', function(){
-	count++;
+	
+var genFlag = false;
+// debugger
+
+for(var gen = 0; gen < gender.length; gen++){
+	if(gender[gen].checked == true){
+		genFlag = true;
+	}
+}
+
+
+if(uname.value == ""){
+	alert('name');
+	uname.setAttribute('class', 'error');
+}else if(Email.value == ""){
+	alert('Email');
+	uname.removeAttribute('class', 'error');
+	Email.setAttribute('class', 'error');
+}else if(contact.value == ""){
+	alert('contact');
+	uname.removeAttribute('class', 'error');
+	Email.removeAttribute('class', 'error');
+	contact.setAttribute('class', 'error');
+}else if(country.value == "none"){
+	alert('country');
+	uname.removeAttribute('class', 'error');
+	Email.removeAttribute('class', 'error');
+	contact.removeAttribute('class', 'error');
+	country.setAttribute('class', 'error');
+}else if(!genFlag){
+	uname.removeAttribute('class', 'error');
+	Email.removeAttribute('class', 'error');
+	contact.removeAttribute('class', 'error');
+	country.removeAttribute('class', 'error');
+	alert('gender');
+	genError.style.display = "inline";
+}else{
+		genError.style.display = "none";
+		alert('success');
+		count++;
 	// Form Values
 		// console.log(uname.value);
 		// console.log(Email.value);
@@ -280,9 +325,8 @@ subBtn.addEventListener('click', function(){
 
 		};
 
-
+	}
 });
-
 
 canBtn.onclick = function(){
 	uname.value = "";
