@@ -117,15 +117,19 @@ for(var gen = 0; gen < gender.length; gen++){
 	}
 }
 
+var Char = /^[a-zA-Z]{3,}$/g;
+var Num = /^[0-9]{10}$/g;
+var EmailReg = /^[a-zA-Z\.0-9]+@+[a-zA-Z]+\.+[a-zA-Z]{2,5}$/g;
 
-if(uname.value == ""){
+
+if(!Char.test(uname.value)){
 	alert('name');
 	uname.setAttribute('class', 'error');
-}else if(Email.value == ""){
+}else if(!EmailReg.test(Email.value)){
 	alert('Email');
 	uname.removeAttribute('class', 'error');
 	Email.setAttribute('class', 'error');
-}else if(contact.value == ""){
+}else if(!Num.test(contact.value)){
 	alert('contact');
 	uname.removeAttribute('class', 'error');
 	Email.removeAttribute('class', 'error');
@@ -339,11 +343,6 @@ canBtn.onclick = function(){
 			}
 		}
 }
-
-
-
-
-
 
 
 

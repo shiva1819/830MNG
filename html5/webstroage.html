@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>	
+	<input type="text" name="uname" id="uname">
+	<h2 id="demo"></h2>
+	<script type="text/javascript">
+		var abc = document.getElementById('uname');
+		var demo = document.getElementById('demo');
+
+		demo.innerHTML = localStorage.getItem('Uname');
+			abc.onblur = function(){
+				var Uname = this.value;
+				console.log(Uname);
+				localStorage.setItem('Uname', Uname);
+				demo.innerHTML = localStorage.getItem('Uname');
+			}
+
+			demo.onclick = function(){
+				localStorage.clear();
+				// localStorage.removeItem('Uname');
+				window.location.href =  "file:///C:/Users/Indira%20Shivaprasad/Desktop/Session/830Mng/830MNG/html5/webstroage.html";
+			}
+
+		// sessionStorage.setItem('Name', "demo Name");
+
+	</script>
+</body>
+</html>

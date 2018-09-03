@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		#vid{
+			width: 200%;
+			height: 100vh;
+			position: fixed;
+			top: 0px;
+			left: -700px;
+			z-index: -1111;
+		}
+	</style>
+</head>
+<body>
+<!-- 
+	<video src="vid.mp4" width="500" height="500" controls autoplay muted>
+		Try in latest browser...
+	</video> -->
+
+	<video autoplay id="vid" loop>
+		<source src="vid.mp4" type="video/mp4">
+		<source src="vid.ogg" type="video/ogg">
+	</video>
+
+
+	<audio autoplay controls id="sng">
+		<source src="aud.mp3" type="audio/mp3">
+	</audio>
+
+	<iframe src="index.html" width="400" height="400"></iframe>
+
+	<button id="btn"> Play </button>
+
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/CfeC01Yt8l8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+	<script type="text/javascript">
+		var Sng = document.getElementById('sng');
+
+		var vid = document.getElementById('vid');
+		var btn = document.getElementById('btn');
+
+		btn.onclick = function(){
+			Sng.pause();
+			vid.pause();
+		}
+
+	</script>
+</body>
+</html>

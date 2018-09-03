@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#slider{
+			width: 1024px;
+			margin: auto;
+			/*display: inline-block;*/
+		}
+	</style>
+</head>
+<body>
+
+	<button id="left"> Left </button>
+		<div id="slider">
+			<img src="slide1.jpg" id="Img">
+		</div>
+	<button id="right"> Right </button>
+
+
+
+
+
+	<script type="text/javascript">
+		var slider = document.getElementById('slider');
+		var left = document.getElementById('left');
+		var right = document.getElementById('right');
+		var Img = document.getElementById('Img');
+
+			console.log();
+
+		left.addEventListener('click', slide);
+		right.addEventListener('click', slide1);
+
+
+
+		function slide(){
+			var ImgSrc = Img.getAttribute('src').split('.')[0];
+			console.log(ImgSrc);
+			if(ImgSrc == 'slide1'){
+				Img.src = 'slide3.jpg';
+			}else if(ImgSrc == 'slide3'){
+				Img.src = 'slide2.jpg';
+			}else{
+				Img.src = 'slide1.jpg';
+			}
+		}
+
+
+		function slide1(){
+			var ImgSrc = Img.getAttribute('src').split('.')[0];
+			console.log(ImgSrc);
+			if(ImgSrc == 'slide1'){
+				Img.src = 'slide2.jpg';
+			}else if(ImgSrc == 'slide2'){
+				Img.src = 'slide3.jpg';
+			}else{
+				Img.src = 'slide1.jpg';
+			}
+		}
+
+	</script>
+</body>
+</html>
