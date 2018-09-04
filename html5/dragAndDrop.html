@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#drop{
+			width: 200px;
+			height: 200px;
+			border:1px solid red;
+			margin: auto;
+		}
+		#drop div{
+			display: inline-block;
+		}
+		div[draggable='true']{
+			width: 50px;
+			height: 50px;
+			background-color: lime;
+
+		}
+	</style>
+</head>
+<body id="dropItem" ondrop="drop(event)" ondragover="over(event)">
+	<div id="drop" ondrop="drop(event)" ondragover="over(event)"></div>
+	<div id="drag" ondragstart="drag(event)" draggable="true"> Drag Me</div>
+	<div id="drag1" ondragstart="drag(event)" draggable="true"> Drag Me 1</div>
+	<div id="drag2" ondragstart="drag(event)" draggable="true"> Drag Me 2</div>
+	
+
+	<script type="text/javascript">
+		function drag(e){
+			// e.preventDefault();
+			console.log(e.target.id);
+			e.dataTransfer.setData('Drag', e.target.id);
+		}
+
+
+		function over(e){
+			e.preventDefault();
+			// console.log(e);
+		}
+
+		function drop(e){
+			e.preventDefault();
+
+			console.log(e.dataTransfer.getData('Drag'));
+			var Id = e.dataTransfer.getData('Drag');
+
+			console.log(e.target.appendChild(document.getElementById(Id)));
+		}
+	</script>
+</body>
+</html>
