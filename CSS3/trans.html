@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#one{
+			font-size: 20px;
+			transition: 1s;
+			/*transition-duration: 1s;
+			transition-property: letter-spacing, font-size;
+			transition-delay: 2s;
+			transition-timing-function: cubic-bezier(.71,1.12,.34,-0.59);*/
+		}
+		#one:hover{
+			font-size: 40px;
+			letter-spacing: 40px;
+		}
+
+		ul li{
+			width: 100px;
+			height:100px;
+			text-align: center;
+			line-height: 100px;
+			border:1px solid;
+			margin-top: 100px;
+			display: inline-block;
+			margin-left: 150px;
+			transition: 1s;
+		}
+
+		#tran:hover{
+			transform: translate(-100px,0px);
+		}
+
+		#scale:hover{
+			transform: scale(1.5,1);
+		}
+		#rotate:hover{
+			transform: rotateX(5turn);
+		}
+		#skew{
+			position: absolute !important;
+			top: 100px;
+			right: 0px;
+		}
+		#skew:hover{
+			transform: skewY(45deg);
+		}
+
+		/*p{
+			transform: rotate(-45deg);
+			text-align: center;
+			line-height: 90px;
+		}*/
+	</style>	
+</head>
+<body>		
+	<div id="one">
+		HELLO
+	</div>
+
+	<ul>
+		<li id="tran">
+			Translate
+		</li>
+		<li id="scale">
+			Scale
+		</li>
+		<li id="rotate">
+			ROATE
+		</li>
+		<li id="skew">
+			Skew
+		</li>
+
+	</ul>
+</body>
+</html>

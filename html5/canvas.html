@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-
+	<input type="text" name="" id="uname">
 	<canvas id="can" width="400" height="400" style="border:1px solid #000">
 		Your Browser is not Supporting....
 	</canvas>
@@ -14,14 +14,15 @@
 		var ctx = Can.getContext('2d');
 
 			// ctx.rect(x,y,w,h)
-			/*ctx.beginPath();
+			ctx.beginPath();
 			ctx.fillStyle = "lime";
 			ctx.rect(0,0,400,100);
 			ctx.fill();
-			ctx.closePath();*/
-			// ctx.stroke();
+			ctx.lineWidth = 7;
+			ctx.closePath();
+			ctx.stroke();
 
-/*			ctx.beginPath();
+			ctx.beginPath();
 			ctx.moveTo(200,120);
 			ctx.lineTo(20,380);
 			ctx.moveTo(20,380);
@@ -38,27 +39,36 @@
 
 			ctx.font = "30px Arial";
 			ctx.lineWidth = 1;
-			ctx.strokeText("Hello", 150,300);
+			ctx.strokeText(uname.value, 150,300);
 			ctx.stroke();
-*/			
+			
 
-			var x = 0;
+
+			ctx.beginPath();
+			ctx.fillStyle = "lime";
+			// ctx.arc(150,150,50,0, 2 * Math.PI, false);
+			ctx.fill();
+			var x = 1.1;
+
 			setInterval(function(){
-				ctx.clearRect(0,0, Can.width, Can.height);
+				// ctx.clearRect(0,0, Can.width, Can.height);
+
+				ctx.beginPath();
 				ctx.fillStyle = "lime";
-	
-				ctx.arc(150,150,50,x,Math.PI * 1, true);
+				ctx.arc(150,150,50,x * Math.PI, 1 * Math.PI, true);
 				ctx.fill();
 				ctx.lineWidth = 7;
 				ctx.stroke();
 
-				x += 1;
+				
 
-				if(x == 10){
-					x = 0;
+				if(x >= 3){
+					x = 3;
+				}else{
+					x += 0.1;
 				}
 
-			},200)
+			},100)
 
 /*
 			ctx.beginPath();
