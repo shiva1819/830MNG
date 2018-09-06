@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		#header{
+			/*width: ;*/
+			margin: auto;
+			background-color: #ccc;
+			color: #fff;
+			position: relative;
+		}
+		#btn{
+			position: absolute;
+			right: 15px;
+			top: 15px;
+			display: none;
+		}
+		#header aside{
+			float: left;
+			width: 200px;			
+		}
+		#header aside{
+			text-align: center;
+			line-height: 50px;
+		}
+
+		#header nav{
+			float: right;
+			width: 500px;
+		}
+		#header nav ul{
+			float: right;
+		}
+		#header nav ul li{
+			width: 100px;
+			text-align: center;
+			display: inline-block;
+			line-height: 50px;
+		}
+		#header nav ul li:hover{
+			background-color: #eee;
+			color: #000;
+		}
+
+
+		@media screen and (max-width: 768px){
+			#header{
+				background: lime;
+			}
+			#header nav{
+				display: none;
+			}
+			#btn{
+				display: inline;
+			}
+
+
+		}
+
+		.clear{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<aside>
+			<h1> LOGO </h1>
+		</aside>
+		<nav>
+			<ul>
+				<li>
+					HOme 
+				</li>
+				<li>
+					About 
+				</li>
+				<li>
+					Gallery 
+				</li>
+				<li>
+					Services 
+				</li>
+			</ul>
+		</nav>
+		<div class="clear"></div>
+		<button type="button" id="btn"> MENU </button>
+	</div>
+</body>
+</html>
