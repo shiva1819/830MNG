@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>	
+	<style type="text/css">
+		#demo{
+			width: 200px;
+			height: 200px;
+			text-align: center;
+			line-height: 200px;
+			background-color: crimson;
+			color: #fff;
+			/*display: none;*/
+		}
+	</style>
+</head>
+<body>
+	<div id="demo">
+		TEXT
+	</div>
+	<button id="clickme"> CLICK </button>
+	<script type="text/javascript">
+		// hide(), show(), 
+		// fadeOut,fadeIn, fadeToggle,
+		// slideUP, slideDown, slideToggle()
+		// animate();
+
+
+		$('button#clickme').click(function(){
+			// $('#demo').hide();
+			// $('#demo').slideUp(2000);
+
+			$('#demo').animate({
+				'marginLeft':'500px',
+				marginTop:'200px',
+				width:400 + 'px'
+			})
+		});
+	</script>
+</body>
+</html>

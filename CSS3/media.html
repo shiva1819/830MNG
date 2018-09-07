@@ -50,6 +50,13 @@
 			color: #000;
 		}
 
+		li.db{
+			display: block !important;
+		}
+
+		figure img{
+			width: 100%;
+		}
 
 		@media screen and (max-width: 768px){
 			#header{
@@ -57,11 +64,30 @@
 			}
 			#header nav{
 				display: none;
+				width: 100%;
+				background-color: rgba(120,200,101,0.5);
+			}
+			#header nav ul{
+				width: 100%;
 			}
 			#btn{
-				display: inline;
+				display: inline;  
+			}
+			li{
+				width: 100% !important;
+				text-align: center !important;
 			}
 
+
+		}
+
+
+		.min .demo{
+			max-width: 200px; 
+			min-height: 100px;
+			background-color: lime;
+			display: inline-block;
+			vertical-align: top;
 
 		}
 
@@ -94,5 +120,31 @@
 		<div class="clear"></div>
 		<button type="button" id="btn"> MENU </button>
 	</div>
+	<figure>
+		<img src="one.jpeg">
+	</figure>
+	<div class="min">
+		<section class="demo"> asd </section>
+		<section class="demo"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+ </section>
+		<section class="demo"> asd </section>
+
+	</div>
+	<script type="text/javascript">
+		var Btn = document.getElementById('btn');
+		var Li = document.getElementsByTagName('li');
+		var nav = document.getElementsByTagName('nav');
+		Btn.onclick = function(){
+			for(var i = 0; i < Li.length; i++){
+				Li[i].className = 'db';
+			}
+			nav[0].style.display = "block";
+			nav[0].style.position = "absolute";
+			nav[0].style.left = "0px";
+			nav[0].style.top = "50px";
+
+		}
+	</script>
 </body>
 </html>
