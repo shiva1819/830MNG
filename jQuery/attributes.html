@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		div.demo{
+			background-color: lime;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		
+	</div>
+	<button> remove </button>
+	<script type="text/javascript">
+		$('div').attr('id', 'demo');
+		$('div').attr('data-target', 'link');
+
+		console.log($('div').attr('data-target'));
+
+		$('div').addClass('demo');
+		$('button').click(function(){
+			$('div').removeClass('demo');
+		})
+	</script>
+</body>
+</html>

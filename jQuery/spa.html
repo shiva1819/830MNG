@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0px;
+		}
+		header{
+			width: 20%;
+			line-height: 50px;
+			height: 100vh;
+			padding-top: 200px;
+			box-sizing: border-box;
+			background-color: #ccc;
+		}
+		ul li{
+			list-style: none;
+			text-align: center;
+			cursor: pointer;
+		}
+		ul li:hover{
+			background-color: #eee;
+		}
+		#mainEle{
+			position: absolute;
+			left: 20%;
+			top: 0px;
+			width: 80%;
+			height: 100vh;
+			background-color: lime;
+		}
+	</style>
+</head>
+<body>
+
+	<header id="main">
+		<ul>
+			<li data-link="home.html">
+				Home
+			</li>
+			<li data-link="about.html">
+				About
+			</li>
+		</ul>
+	</header>
+	<main id="mainEle">
+		
+	</main>
+	<script type="text/javascript">
+		$('ul li').click(function(){
+			var link = $(this).attr('data-link');
+			$('#mainEle').load(link);
+		});
+	</script>
+</body>
+</html>

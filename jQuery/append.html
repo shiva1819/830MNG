@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<style type="text/css">
+		ul li{
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			padding: 10px;
+			background-color: #ccc;
+			margin-left: 10px;
+		}
+		ul li img{
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+		.tran{
+			width: 100%;
+			position: fixed;
+			height: 100vh;
+			top: 0px;
+			left: 0px;
+			background-color: rgba(0,0,0,0.2);
+			display: none;
+		}
+		#project{
+			width: 90%;
+			height: 85vh;
+			position: absolute;
+			top: 25px;
+			left: 75px;
+			box-shadow: 0px 0px 5px 3px #000;
+			/*display: none;*/
+			/*background-color: #ccc;*/
+		}
+		#project img{
+			width: 100%;
+			/*height: 100%;*/
+		}
+		#close{
+			position: absolute;
+			top: 0px;
+			right: 0px;
+		}
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<img src="1.jpg">
+		</li>
+		<li>
+			<img src="2.jpg">
+		</li>
+		<li>
+			<img src="3.jpg">
+		</li>
+	</ul>
+	<div class="tran">
+		<button id="close"> X </button>
+		<div id="project">
+			
+		</div>	
+	</div>
+	<script type="text/javascript">
+		$('ul li img').click(function(){
+			console.log($(this).attr('src'));
+			$('#project').html('<img src='+$(this).attr('src')+ '>');
+			$('.tran').fadeIn();
+
+		});
+		$('#close').click(function(){
+			// remove, empty
+			$('.tran').empty();
+		});
+	</script>
+</body>
+</html>

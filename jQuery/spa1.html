@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<script type="text/javascript" src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		#mainHeader{
+			background-color: rgba(0,0,0,0.2);
+			color: #fff;
+			padding: 20px;
+			position: fixed;
+			width: 100%;
+			top: 0px;
+			left: 0px;
+
+		}
+		ul li{
+			display: inline-block;
+			width: 100px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		section{
+			height: 100vh;
+			padding-top: 75px;
+
+		}
+		#home{
+			background-color: lime;
+			
+		}
+		#about{
+			background-color: crimson;
+		}
+		#gallery{
+			background-color: yellow;
+		}
+		.w20{
+			width: 20%;
+		}
+		.w80{
+			width: 80%;
+		}
+		.clear{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+
+	<header id="mainHeader">
+		<div id="logo" class="fl w20">
+			myLogo
+		</div>
+		<nav id="mainNav" class="fl w80">
+			<ul class="fr">
+				<li>
+					<a href="#home"> HOME </a>
+				</li>
+				<li>
+					<a href="#about"> About </a>
+				</li>
+				<li>
+					<a href="#gallery"> gallery </a>
+				</li>
+			</ul>
+		</nav>
+		<div class="clear"></div>
+	</header>
+	<section id="home">
+		<div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}' class="autoplay">
+		  <div><h3>1</h3></div>
+		  <div><h3>2</h3></div>
+		  <div><h3>3</h3></div>
+		  <div><h3>4</h3></div>
+		  <div><h3>5</h3></div>
+		  <div><h3>6</h3></div>
+		</div>
+	</section>
+	<section id="about">
+		ABOUT
+	</section>
+	<section id="gallery">
+		GALLERY
+	</section>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script type="text/javascript">
+
+		$('.autoplay').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 1,
+		  autoplay: true,
+		  autoplaySpeed: 2000,
+		});
+
+		$('ul li a').click(function(){
+			debugger
+			var ids = $(this).attr('href');
+			var posY = $(ids).offset().top;
+
+
+			$('html, body').animate({
+						scrollTop:posY+"px" 
+			}, 1000,'easeOutBounce');
+
+
+		});
+	</script>
+</body>
+</html>
